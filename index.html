@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MYTHIC.CPM | Premium Shop</title>
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 25px 15px;
+  min-height: 100vh;
+  background: #080810;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 34px;
+  background: linear-gradient(90deg,
+    #ff00ff, #00ffff, #39ff14,
+    #ffff00, #ff00ff);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow 4s linear infinite;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0%; }
+  100% { background-position: 300%; }
+}
+
+h2 { color: #00ffff; }
+
+.subtitle { color: #bbbbcc; }
+
+.shop {
+  max-width: 480px;
+  margin: 30px auto;
+}
+
+.package {
+  position: relative;
+  background: #181827;
+  border: 2px solid #ff00ff;
+  border-radius: 16px;
+  padding: 22px;
+  margin: 18px 0;
+  cursor: pointer;
+  font-size: 19px;
+  font-weight: bold;
+  box-shadow: 0 0 15px #ff00ff55;
+  transition: transform .2s;
+  animation: glow 4s linear infinite;
+}
+
+.package:active {
+  transform: scale(.97);
+}
+
+@keyframes glow {
+  0%, 100% {
+    border-color: #ff00ff;
+    box-shadow: 0 0 15px #ff00ff;
+  }
+  33% {
+    border-color: #00ffff;
+    box-shadow: 0 0 15px #00ffff;
+  }
+  66% {
+    border-color: #39ff14;
+    box-shadow: 0 0 15px #39ff14;
+  }
+}
+
+.price {
+  display: block;
+  margin-top: 10px;
+  color: #ffff00;
+  font-size: 24px;
+}
+
+.notice {
+  margin-top: 30px;
+  color: #bbbbcc;
+  font-size: 14px;
+}
+</style>
+</head>
+<body>
+
+<h1>👑 MYTHIC.CPM 👑</h1>
+<h2>🌈 PREMIUM SHOP</h2>
+<p class="subtitle">⭐ Choose your access package</p>
+
+<div class="shop">
+
+<div class="package" onclick="selectPackage('24h')">
+⚡ 24 Hour Access
+<span class="price">250 ⭐</span>
+</div>
+
+<div class="package" onclick="selectPackage('7d')">
+🔥 7 Day Access
+<span class="price">500 ⭐</span>
+</div>
+
+<div class="package" onclick="selectPackage('30d')">
+💎 30 Day Access
+<span class="price">1000 ⭐</span>
+</div>
+
+<div class="package" onclick="selectPackage('lifetime')">
+👑 Lifetime Access
+<span class="price">1500 ⭐</span>
+</div>
+
+</div>
+
+<p class="notice">
+🔒 Access is manually approved after payment.
+</p>
+
+<script>
+function selectPackage(id) {
+  const packages = {
+    "24h": "24 Hour Access - 250 Stars",
+    "7d": "7 Day Access - 500 Stars",
+    "30d": "30 Day Access - 1000 Stars",
+    "lifetime": "Lifetime Access - 1500 Stars"
+  };
+
+  if (!packages[id]) return;
+
+  alert("⭐ Selected: " + packages[id]);
+}
+</script>
+
+</body>
+</html>
